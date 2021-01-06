@@ -1,0 +1,28 @@
+<section id="add">
+    <div>
+        <h1>Add an article</h1>
+        {{#each errors}}
+            <div>
+                <p>{{text}}</p>
+            </div>
+        {{/each}}
+        <form action="/articles/add" method="POST">
+            <div>
+                <label for="title">Article title</label>
+                <input type="text" name="title" id="title" placeholder="title of the article..."
+                       maxlength="100" value={{title}}>
+            </div>
+            <div>
+                <label for="content">Article content</label>
+                <input type="text" name="content" id="content" placeholder="content of the article..."
+                       maxlength="100" value={{content}}>
+            </div>
+            <div>
+                <label for="author">Article author</label>
+                <input type="text" name="author" id="author" placeholder="author or the article..." value={{author}}>
+            </div>
+
+            <input type="submit" value="Add article">
+        </form>
+    </div>
+</section>
